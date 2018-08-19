@@ -1,0 +1,33 @@
+{
+  "name": "hapijs-mongoose-app-bootstrap",
+  "version": "1.0.0",
+  "description": "API bootstrap app using hapijs and mongoose with JWT auth",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "start-dev": "./node_modules/nodemon/bin/nodemon.js index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SoftwareBrothers/hapijs-mongoose-app-bootstrap.git"
+  },
+  "keywords": [
+    "hapi",
+    "api",
+    "mongoose",
+    "jwt"
+  ],
+  "author": "Wojciech Krysiak",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SoftwareBrothers/hapijs-mongoose-app-bootstrap/issues"
+  },
+  "homepage": "https://github.com/SoftwareBrothers/hapijs-mongoose-app-bootstrap#readme",
+  "dependencies": {
+    "hapi": "^17.5.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.3"
+  }
+}
