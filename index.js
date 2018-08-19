@@ -1,7 +1,9 @@
 const server  = require('./config/server')
+const database = require('./config/database')
 
 const start = async () => {
   try {
+    await database.connect()
     await server.start()
   }
   catch (err) {

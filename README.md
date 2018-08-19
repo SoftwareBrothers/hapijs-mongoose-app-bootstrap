@@ -1,6 +1,6 @@
 # hapijs-mongoose-app-bootstrap
 
-## Whats the app is about
+## What is the app about
 
 This is a base application for running new projects in SoftwareBrothers using HAPI framework and mongoose as the persistent data store.
 
@@ -8,12 +8,14 @@ The app has following features:
 
 - dockerized environment
 - automated tests using mocha, chai and sinon
-- measurement test coverage
-- database configured
-- linter configured (eslint)
+- measured test coverage
+- database configuration
+- eslint linter configuration
 - API documentation generator using swagger
 - inline documnetation generator using jsdoc
 - authentication routes using JWT
+
+Using this repo as a start for new app should save you one day of development.
 
 ## Files to create
 
@@ -38,4 +40,17 @@ docker-compose exec app bash
 ```
 
 Than you can simply run any command you like.
+
+## Automated tests
+
+As mentioned above application uses mocha along with chai.expect syntax. All tests are placed within `./spec` subdirectory. Under `./spec/index.js` you can find all the configuration for the test suit and under `./spec/mocha.opts` options for mocha runner.
+
+To run tests:
+```
+# enter the container
+docker-compose exec app bash
+
+# run tests
+npm test
+```
 

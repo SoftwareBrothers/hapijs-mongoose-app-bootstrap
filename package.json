@@ -4,7 +4,7 @@
   "description": "API bootstrap app using hapijs and mongoose with JWT auth",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "./node_modules/mocha/bin/mocha --opts mocha.opts ./spec",
     "start": "node index.js",
     "start-dev": "./node_modules/nodemon/bin/nodemon.js index.js"
   },
@@ -25,9 +25,15 @@
   },
   "homepage": "https://github.com/SoftwareBrothers/hapijs-mongoose-app-bootstrap#readme",
   "dependencies": {
-    "hapi": "^17.5.3"
+    "hapi": "^17.5.3",
+    "mongoose": "^5.2.9",
+    "require-all": "^3.0.0"
   },
   "devDependencies": {
-    "nodemon": "^1.18.3"
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.3",
+    "sinon": "^6.1.5",
+    "sinon-chai": "^3.2.0"
   }
 }
