@@ -7,8 +7,9 @@ global.expect = chai.expect
 global.sinon = require('sinon')
 
 const database = require('../config/database')
-const models = require('require-all')({
-  dirname: __dirname + '/../src/models', recursive: false
+const models = require('require.all')({
+  dir: '../src/models',
+  recursive: false
 })
 
 global.server = require('../config/server')
@@ -24,7 +25,7 @@ beforeEach(async () => {
 afterEach(async () => {
   global.sandbox.restore()
   for(let model in models) {
-    await models[model].remove({})
+    await models[model].deleteMany({})
   }
 })
 

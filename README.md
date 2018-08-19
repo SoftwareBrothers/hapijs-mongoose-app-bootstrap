@@ -12,7 +12,7 @@ The app has following features:
 - database configuration
 - eslint linter configuration
 - API documentation generator using swagger
-- inline documnetation generator using jsdoc
+- inline documentation generator using jsdoc
 - authentication routes using JWT
 
 Using this repo as a start for new app should save you one day of development.
@@ -69,6 +69,9 @@ Project has eslint configuration file under `./eslintrc.js`. To run linter again
 # within the container
 npm run lint
 ```
+
+## Swagger API docs
+
 
 
 

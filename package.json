@@ -26,9 +26,17 @@
   },
   "homepage": "https://github.com/SoftwareBrothers/hapijs-mongoose-app-bootstrap#readme",
   "dependencies": {
+    "bcrypt": "^3.0.0",
     "hapi": "^17.5.3",
+    "hapi-auth-jwt2": "^8.1.0",
+    "hapi-swagger": "^9.1.1",
+    "hapi-swagger-next": "^1.0.0",
+    "inert": "^5.1.0",
+    "jsonwebtoken": "^8.3.0",
     "mongoose": "^5.2.9",
-    "require-all": "^3.0.0"
+    "pack": "^2.1.0",
+    "require.all": "^2.0.4",
+    "vision": "^5.3.3"
   },
   "devDependencies": {
     "@mocha/eslint-config-mocha": "0.0.0",
