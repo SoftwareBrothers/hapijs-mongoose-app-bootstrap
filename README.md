@@ -47,10 +47,28 @@ As mentioned above application uses mocha along with chai.expect syntax. All tes
 
 To run tests:
 ```
-# enter the container
+# enter the docker app container
 docker-compose exec app bash
 
-# run tests
+# within the container
 npm test
 ```
+
+## Database
+
+Application uses mongodb as a persistent data store. ORM is mongoose. 
+
+MongoDB container is configured under `./infrastructure/docker-compose.yml` where
+Simple configuration file for the database connection can be found here: `./config/database.js`
+
+## Linter
+
+Project has eslint configuration file under `./eslintrc.js`. To run linter against all the files you can use dedicated npm command:
+
+```
+# within the container
+npm run lint
+```
+
+
 

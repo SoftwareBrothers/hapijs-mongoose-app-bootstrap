@@ -6,7 +6,8 @@
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha --opts mocha.opts ./spec",
     "start": "node index.js",
-    "start-dev": "./node_modules/nodemon/bin/nodemon.js index.js"
+    "start-dev": "./node_modules/nodemon/bin/nodemon.js index.js",
+    "lint": "./node_modules/eslint/bin/eslint.js './spec/**' './config/**' './src/**'"
   },
   "repository": {
     "type": "git",
@@ -30,7 +31,14 @@
     "require-all": "^3.0.0"
   },
   "devDependencies": {
+    "@mocha/eslint-config-mocha": "0.0.0",
     "chai": "^4.1.2",
+    "eslint": "^5.4.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-mocha-only": "0.0.3",
+    "eslint-plugin-promise": "^4.0.0",
+    "eslint-plugin-standard": "^3.1.0",
     "mocha": "^5.2.0",
     "nodemon": "^1.18.3",
     "sinon": "^6.1.5",
