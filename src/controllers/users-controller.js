@@ -8,7 +8,6 @@ module.exports = {
       password,
     })
     return {
-      user: {email: user.email, _id: user._id},
       token: auth.createToken(user)
     }
   },

@@ -41,6 +41,12 @@ docker-compose exec app bash
 
 Than you can simply run any command you like.
 
+Application runs under port 8080 so after up'ing the docker-compose visit `localhost:8080/health` to see healthcheck from the api.
+
+## Folders structure
+
+
+
 ## Automated tests
 
 As mentioned above application uses mocha along with chai.expect syntax. All tests are placed within `./spec` subdirectory. Under `./spec/index.js` you can find all the configuration for the test suit and under `./spec/mocha.opts` options for mocha runner.
@@ -72,6 +78,8 @@ npm run lint
 
 ## Swagger API docs
 
+To turn on swagger api documentation make sure SWAGGER env variable is set to `true` in `./infrastructure/.env` file
 
+Swagger api documentation is available under `http://localhost:8080/documentation`. To document new routes take a look at how to do this: https://github.com/glennjones/hapi-swagger or check any existing routes.
 
 

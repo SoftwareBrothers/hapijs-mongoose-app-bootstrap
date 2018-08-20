@@ -1,6 +1,6 @@
 module.exports = {
-  '/health': require('./health-route'),
-  '/me': require('./me-route'),
-  '/users/auth': require('./users-auth-route'),
-  '/users/create': require('./users-create-route')
+  '/health': require('./endpoints/health-route'),
+  '/users/create': require('./endpoints/users-create-route'),
+  '/users/auth': require('./endpoints/users-auth-route'),
+  '/me': require('./endpoints/me-route'),
 }
