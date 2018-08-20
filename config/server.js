@@ -1,3 +1,7 @@
+/**
+ * @fileOverview Hapi server main configuration file
+ */
+
 const Hapi = require('hapi')
 const auth = require('./auth')
 const swagger = require('./swagger')

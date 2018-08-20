@@ -1,8 +1,12 @@
+/**
+ * @module models
+ */
+
 const mongoose = require('mongoose')
 const Bcrypt = require('bcrypt')
 const Schema = mongoose.Schema
 const Boom = require('boom')
- 
+
 const UserSchema = new Schema({
   email: {
     type: String,
@@ -14,6 +18,16 @@ const UserSchema = new Schema({
   }
 })
 
+/**
+ * Returns user based on her email and password. If user is not found or 
+ * password does not mach it throws error.
+ * 
+ * @memberof module:models~User
+ * 
+ * @param  {String} options.email
+ * @param  {String} options.password
+ * @return {User}
+ */
 UserSchema.statics.authenticate = async function({email, password}) {
   const user = await this.findOne({email: email})
   const invalid = !user || !await Bcrypt.compare(password, user.auth && user.auth.password)
@@ -23,6 +37,16 @@ UserSchema.statics.authenticate = async function({email, password}) {
   return user
 }
 
+/**
+ * Creates user based on her email and password. If user of a given email]
+ * already exists it throws an error.
+ * 
+ * @memberof module:models~User
+ * 
+ * @param  {String} options.email
+ * @param  {String} options.password
+ * @return {User}
+ */
 UserSchema.statics.signUp = async function({email, password}) {
   let user = await this.findOne({email})
   if (user) {
@@ -35,6 +59,11 @@ UserSchema.statics.signUp = async function({email, password}) {
   }).save()
 }
 
+/**
+ * Mongoose model for the users collection.
+ * 
+ * @constructor
+ */
 const User = mongoose.model('User', UserSchema)
 
 module.exports = User

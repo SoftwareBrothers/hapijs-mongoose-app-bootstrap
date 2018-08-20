@@ -53,7 +53,6 @@ Application contains following folder structure:
 ./spec/index.js - test suite configuration
 ./spec/controllers - tests for controllers
 ./spec/models - tests for models
-./spec/features - end2end api tests
 ./src - source code for the application
 ./src/controllers - controllers
 ./src/models - mongoose models with schemas
@@ -110,4 +109,5 @@ npm run docs
 withing the app container.
 
 It will create and populate `./docs` folder with documentation files.
-Also if you set `JSDOC` env to `true` entire documentation will be available under `http://localhost:8080/code`
+Also if you set `JSDOC` env to `true` entire documentation will be served from `http://localhost:8080/code`
+

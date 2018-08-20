@@ -1,3 +1,7 @@
+/**
+ * @fileOverview JWT Auth configuration for hapi server
+ */
+
 const User = require('../src/models/user-model')
 const secret = process.env.JWT_SECRET
 const JWT = require('jsonwebtoken')

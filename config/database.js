@@ -1,3 +1,7 @@
+/**
+ * @fileOverview Mongoose configuration
+ */
+
 const mongoose = require('mongoose')
 
 module.exports.connect = async () => {
