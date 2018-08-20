@@ -45,9 +45,22 @@ Application runs under port 8080 so after up'ing the docker-compose visit `local
 
 ## Folders structure
 
+Application contains following folder structure:
 
+./config - all server configuration files are there.
+./infrastructure - files related to docker, docker-compose
+./spec - test files
+./spec/index.js - test suite configuration
+./spec/controllers - tests for controllers
+./spec/models - tests for models
+./spec/features - end2end api tests
+./src - source code for the application
+./src/controllers - controllers
+./src/models - mongoose models with schemas
+./src/routes - api routes
+./tutorials - standalone tutorial files used by jsdoc
 
-## Automated tests
+## Automated tests with coverage
 
 As mentioned above application uses mocha along with chai.expect syntax. All tests are placed within `./spec` subdirectory. Under `./spec/index.js` you can find all the configuration for the test suit and under `./spec/mocha.opts` options for mocha runner.
 
@@ -57,7 +70,11 @@ To run tests:
 docker-compose exec app bash
 
 # within the container
+# simply run automated tests
 npm test
+
+# or get coverage report
+npm run cover
 ```
 
 ## Database
@@ -82,4 +99,15 @@ To turn on swagger api documentation make sure SWAGGER env variable is set to `t
 
 Swagger api documentation is available under `http://localhost:8080/documentation`. To document new routes take a look at how to do this: https://github.com/glennjones/hapi-swagger or check any existing routes.
 
+## JSDoc
 
+Project allows you to generate documentation based on inline comments using JSDoc. In order to generate latest version run:
+
+```
+npm run docs
+```
+
+withing the app container.
+
+It will create and populate `./docs` folder with documentation files.
+Also if you set `JSDOC` env to `true` entire documentation will be available under `http://localhost:8080/code`

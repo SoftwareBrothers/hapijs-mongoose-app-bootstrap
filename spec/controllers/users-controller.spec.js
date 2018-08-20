@@ -23,9 +23,5 @@ describe('UsersController', function() {
       expect(this.ret.token).to.be.a('string')
       expect(this.ret.token).to.have.lengthOf.above(40)
     })
-
-    it('returns created user', function() {
-      expect(this.ret.user._id).to.be.a('string')
-    })
   })
 })

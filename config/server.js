@@ -2,6 +2,7 @@ const Hapi = require('hapi')
 const auth = require('./auth')
 const swagger = require('./swagger')
 const Boom = require('boom')
+const jsdoc = require('./jsdoc')
 
 const routes = require('../src/routes')
 
@@ -17,8 +18,13 @@ const server = Hapi.server({
 })
 
 auth.register(server)
+
 if (process.env.SWAGGER === 'true') {
   swagger.register(server)
+}
+
+if (process.env.JSDOC === 'true') {
+  jsdoc.register(server)
 }
 
 for (var route in routes) {

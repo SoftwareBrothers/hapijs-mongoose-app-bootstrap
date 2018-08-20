@@ -7,7 +7,9 @@
     "test": "./node_modules/mocha/bin/mocha --opts mocha.opts ./spec",
     "start": "node index.js",
     "start-dev": "./node_modules/nodemon/bin/nodemon.js index.js",
-    "lint": "./node_modules/eslint/bin/eslint.js './spec/**' './config/**' './src/**'"
+    "lint": "./node_modules/eslint/bin/eslint.js './spec/**' './config/**' './src/**'",
+    "docs": "node_modules/.bin/jsdoc -c jsdoc.json --readme README.md",
+    "cover": "NODE_ENV=test ./node_modules/nyc/bin/nyc.js"
   },
   "repository": {
     "type": "git",
@@ -40,15 +42,20 @@
   },
   "devDependencies": {
     "@mocha/eslint-config-mocha": "0.0.0",
+    "babel-plugin-istanbul": "^4.1.6",
     "chai": "^4.1.2",
+    "docdash": "^0.4.0",
     "eslint": "^5.4.0",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-mocha-only": "0.0.3",
     "eslint-plugin-promise": "^4.0.0",
     "eslint-plugin-standard": "^3.1.0",
+    "istanbul": "^0.4.5",
+    "jsdoc": "^3.5.5",
     "mocha": "^5.2.0",
     "nodemon": "^1.18.3",
+    "nyc": "^12.0.2",
     "sinon": "^6.1.5",
     "sinon-chai": "^3.2.0"
   }
