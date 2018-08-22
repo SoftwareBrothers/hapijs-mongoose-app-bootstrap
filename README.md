@@ -1,6 +1,6 @@
 # hapijs-mongoose-app-bootstrap
 
-## What this app about about?
+## What is this app about?
 
 This is a base application for running new projects using HAPI framework and mongoose as the persistent data store.
 
