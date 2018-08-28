@@ -47,17 +47,17 @@ Application runs under port 8080 so after up'ing the docker-compose visit `local
 
 Application contains following folders:
 
-./config - all server configuration files.
-./infrastructure - files related to docker and docker-compose
-./spec - test files
-./spec/index.js - test suite configuration
-./spec/controllers - tests for controllers
-./spec/models - tests for models
-./src - source code for the application
-./src/controllers - controllers
-./src/models - mongoose models with schemas
-./src/routes - api routes
-./tutorials - standalone tutorial files used by jsdoc
+- ./config - all server configuration files.
+- ./infrastructure - files related to docker and docker-compose
+- ./spec - test files
+- ./spec/index.js - test suite configuration
+- ./spec/controllers - tests for controllers
+- ./spec/models - tests for models
+- ./src - source code for the application
+- ./src/controllers - controllers
+- ./src/models - mongoose models with schemas
+- ./src/routes - api routes
+- ./tutorials - standalone tutorial files used by jsdoc
 
 ## Automated tests with coverage
 
