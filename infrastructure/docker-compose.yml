@@ -12,6 +12,7 @@ services:
       - mongo
     volumes:
       - ../:/usr/src/app
+      - /usr/src/app/node_modules
     command: "npm run start-dev"
     env_file: '.env'
     depends_on:
