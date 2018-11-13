@@ -1,11 +1,12 @@
 const Joi = require('joi')
 
 const responseModel = Joi.object({
-  alive: Joi.boolean()
+  alive: Joi.boolean(),
 })
 
 module.exports = {
-  path: '/health', method: 'GET',
+  path: '/health',
+  method: 'GET',
   options: {
     auth: false,
     description: 'Perform a health check of the server',
@@ -18,16 +19,16 @@ module.exports = {
         responses: {
           200: {
             description: 'Success',
-            schema: responseModel
-          }
+            schema: responseModel,
+          },
         },
-        payloadType: 'form'
-      }
+        payloadType: 'form',
+      },
     },
   },
-  handler: function() {
+  handler: function handler() {
     return {
-      alive: true
+      alive: true,
     }
-  }
+  },
 }

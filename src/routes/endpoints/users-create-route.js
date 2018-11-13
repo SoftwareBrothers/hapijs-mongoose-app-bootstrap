@@ -13,26 +13,26 @@ module.exports = {
     description: 'Creates new user',
     tags: ['api'],
     validate: {
-      payload: userAuthSchema
+      payload: userAuthSchema,
     },
     plugins: {
       'hapi-swagger': {
         responses: {
           200: {
             description: 'Success',
-            schema: tokenSchema
+            schema: tokenSchema,
           },
           409: {
             description: 'Conflict, user already exists',
-            schema: errorSchema
+            schema: errorSchema,
           },
           400: {
             description: 'Bad Request',
-            schema: errorBadRequestSchema
-          }
+            schema: errorBadRequestSchema,
+          },
         },
-        payloadType: 'form'
-      }
-    }
-  }
+        payloadType: 'form',
+      },
+    },
+  },
 }

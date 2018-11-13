@@ -2,17 +2,20 @@ process.env.NODE_ENV = 'test'
 process.env.MONGO_URL = 'mongodb://mongo/hapi-server-test'
 
 const chai = require('chai')
-chai.use(require('sinon-chai'))
-global.expect = chai.expect
-global.sinon = require('sinon')
-
-const database = require('../config/database')
+const sinonChai = require('sinon-chai')
+const sinon = require('sinon')
 const models = require('require.all')({
   dir: '../src/models',
-  recursive: false
+  recursive: false,
 })
+const database = require('../config/database')
+const server = require('../config/server')
 
-global.server = require('../config/server')
+chai.use(sinonChai)
+
+global.sinon = sinon
+global.expect = chai.expect
+global.server = server
 
 before(async () => {
   await database.connect()
@@ -24,7 +27,7 @@ beforeEach(async () => {
 
 afterEach(async () => {
   global.sandbox.restore()
-  for(let model in models) {
+  for (const model in models) {
     await models[model].deleteMany({})
   }
 })

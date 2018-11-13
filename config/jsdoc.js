@@ -2,19 +2,20 @@
  * @fileOverview cofiguratin for /code route serving jsdoc documentation
  */
 
-require('inert')
+const inert = require('inert')
 
 module.exports.register = async (server) => {
-  await server.register(require('inert'))
+  await server.register(inert)
 
   const route = {
-    path: '/code/{param*}', method: 'GET',
+    path: '/code/{param*}',
+    method: 'GET',
     options: {
       auth: false,
     },
     handler: {
-      directory: {path: 'docs'}
-    }
+      directory: { path: 'docs' },
+    },
   }
   server.route(route)
 }

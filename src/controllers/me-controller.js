@@ -5,7 +5,7 @@ module.exports = {
     const user = await User.findById(request.currentUser._id)
     return {
       _id: user._id,
-      email: user.email
+      email: user.email,
     }
-  }
+  },
 }

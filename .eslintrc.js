@@ -4,7 +4,7 @@ module.exports = {
         'node': true,
         'mocha': true
     },
-    'extends': 'eslint:recommended',
+    'extends': 'airbnb',
     'parserOptions': {
         'ecmaVersion': 2018,
         'sourceType': 'module'
@@ -25,8 +25,23 @@ module.exports = {
         'semi': [
             'error',
             'never'
-        ]
+        ],
+        'import/no-unresolved': 'off',
+        'no-underscore-dangle': 'off',
+        'guard-for-in': 'off',
+        'no-restricted-syntax': 'off',
+        'no-await-in-loop': 'off',
     },
+    overrides: [
+        {
+          files: ['*-test.js', '*.spec.js'],
+          rules: {
+            'no-unused-expressions': 'off',
+            'func-names': 'off',
+            'prefer-arrow-callback': 'off'
+          }
+        }
+    ],
     globals: {
         'expect': true,
         'sandbox': true,

@@ -5,33 +5,34 @@ const errorForbidden = require('../schemas/error-forbidden')
 const errorBadRequestSchema = require('../schemas/error-bad-request')
 
 module.exports = {
-  path: '/users/auth', method: 'POST',
+  path: '/users/auth',
+  method: 'POST',
   handler: usersController.auth,
   options: {
     auth: false,
     description: 'Logs existing user to the application',
     tags: ['api'],
     validate: {
-      payload: userAuthSchema
+      payload: userAuthSchema,
     },
     plugins: {
       'hapi-swagger': {
         responses: {
           200: {
             description: 'Success',
-            schema: tokenSchema
+            schema: tokenSchema,
           },
           403: {
             description: 'Forbidden',
-            schema: errorForbidden
+            schema: errorForbidden,
           },
           400: {
             description: 'Bad Request',
-            schema: errorBadRequestSchema
-          }
+            schema: errorBadRequestSchema,
+          },
         },
-        payloadType: 'form'
-      }
+        payloadType: 'form',
+      },
     },
-  }
+  },
 }

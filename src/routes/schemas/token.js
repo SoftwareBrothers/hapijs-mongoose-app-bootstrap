@@ -1,5 +1,5 @@
 const Joi = require('joi')
 
 module.exports = Joi.object({
-  token: Joi.string()
+  token: Joi.string(),
 })

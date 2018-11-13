@@ -11,18 +11,18 @@ module.exports = {
     description: 'Fetches data from currently logged in user',
     tags: ['api'],
     validate: {
-      headers: Joi.object({...authHeaderValidator}).options({ allowUnknown: true })
+      headers: Joi.object({ ...authHeaderValidator }).options({ allowUnknown: true }),
     },
     plugins: {
       'hapi-swagger': {
         responses: {
           200: {
             description: 'Success',
-            schema: userSchema
-          }
+            schema: userSchema,
+          },
         },
-        payloadType: 'form'
-      }
-    }
-  }
+        payloadType: 'form',
+      },
+    },
+  },
 }

@@ -11,15 +11,16 @@ module.exports.register = async (server) => {
   const swaggerOptions = {
     info: {
       title: 'API Documentation',
-      version: Pack.version
-    }}
+      version: Pack.version,
+    },
+  }
 
   await server.register([
     Inert,
     Vision,
     {
       plugin: HapiSwagger,
-      options: swaggerOptions
-    }
+      options: swaggerOptions,
+    },
   ])
 }

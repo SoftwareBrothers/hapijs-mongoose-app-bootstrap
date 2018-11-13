@@ -3,9 +3,9 @@
  */
 
 const Hapi = require('hapi')
+const Boom = require('boom')
 const auth = require('./auth')
 const swagger = require('./swagger')
-const Boom = require('boom')
 const jsdoc = require('./jsdoc')
 
 const routes = require('../src/routes')
@@ -16,9 +16,9 @@ const server = Hapi.server({
     validate: {
       failAction: async (req, response, err) => {
         throw Boom.badRequest(err.message)
-      }
-    }
-  }
+      },
+    },
+  },
 })
 
 auth.register(server)
@@ -31,7 +31,7 @@ if (process.env.JSDOC === 'true') {
   jsdoc.register(server)
 }
 
-for (var route in routes) {
+for (const route in routes) {
   server.route(routes[route])
 }
 
