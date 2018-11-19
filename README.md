@@ -112,3 +112,6 @@ within the app container.
 It will create and populate `./docs` folder with documentation files.
 Also if you set `JSDOC` env to `true` entire documentation will be served by the app and available under `http://localhost:8080/code`
 
+## Clients
+
+Wonder how to connect with the API from the frontend app? There is a simple client application written in ReactNative. Take a look at it here: https://github.com/SoftwareBrothers/react-native-hapijs-client
