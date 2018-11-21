@@ -118,7 +118,7 @@ Wonder how to connect with the API from the frontend app? There is a simple clie
 
 ## License
 
-asw-lambda-statc-page is Copyright © 2018 SoftwareBrothers.co. It is free software, and may be redistributed under the terms specified in the [LICENSE](LICENSE) file.
+hapijs-mongoose-app-bootstrap is Copyright © 2018 SoftwareBrothers.co. It is free software, and may be redistributed under the terms specified in the [LICENSE](LICENSE) file.
 
 ## About SoftwareBrothers.co
 
